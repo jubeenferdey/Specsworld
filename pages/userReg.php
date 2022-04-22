@@ -1,11 +1,20 @@
 <?php
+$conn = mysqli_connect("localhost","root","","glass");
+if(!$conn){
+    die("Error while connecting to the database");
+    mysqli_close($conn);
+} else{
 include('../libs/loading.php');
-$email = $_POST['email'];
-$password = $_POST['password'];
-$phone = $_POST['phone'];
-$address = $_POST['address'];
+
+// $email = $_POST['email'];
+// $password = $_POST['password'];
+// $phone = $_POST['phone'];
+// $address = $_POST['address'];
 loadTemplate("head");
-if(!isset($email,$password,$phone,$address)){
+$result = isset($_POST['username'],$_POST['email'],$_POST['password'],$_POST['phone'],$_POST['address']);
+// $result = isset($email,$password,$phone,$address);
+if($result==false){
+
 ?>
 <main>
 <body>
@@ -14,7 +23,7 @@ if(!isset($email,$password,$phone,$address)){
     <p> <a href="../index.php">home</a> >> User Registeration </p>
 </section>
 <section class="login-form">  
-<form method="POST">
+<form method="POST" name ="userRegForm" >
         <h3>Create Account</h3>
         <div class="inputBox">
             <span class="fas fa-user"></span>
@@ -53,4 +62,22 @@ if(!isset($email,$password,$phone,$address)){
 </body>
 </html>
 
-<?php } ?>
+<?php } 
+if($result==true){
+
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+    $query = "INSERT INTO USERS (username,email,password,phone,address) VALUES ('$username', '$email', '$password', '$phone', '$address')";
+    if(mysqli_query($conn, $query)){
+    header("Location: accountCreatedPrompt.php");
+    } else {
+        echo "There has been an Error Occurred during insertion.".mysqli_error($conn)."<br>";
+    }
+}
+?>
+<?php }
+mysqli_close($conn); 
+?>

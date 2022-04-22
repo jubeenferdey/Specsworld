@@ -1,10 +1,15 @@
 <?php
+$conn = mysqli_connect("localhost","root","","glass");
+if(!$conn){
+    die("Error while connecting to the database");
+    mysqli_close($conn);
+} else{
 include('libs/loading.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
 $adminAuthResult = validateAdmin($email, $password);
 $userAuthResult = validateUser($email, $password);
-if( isset($email,$password) and $userAuthResult){
+if( $userAuthResult){
     header("Location: home.php");
 }
 else{
@@ -45,4 +50,5 @@ else{
 
 </body>
 </html>
+<?php } ?>
 <?php } ?>

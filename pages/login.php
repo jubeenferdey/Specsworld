@@ -2,8 +2,8 @@
 include "../libs/loading.php";  
 $email = $_POST['email'];
 $password = $_POST['password'];
-$adminAuthResut = validateAdmin($email, $password);
-$userAuthResult = validateUsers($email, $password);
+$adminAuthResut = validateAdmin($_POST['email'], $_POST['password']);
+$userAuthResult = validateUsers($_POST['email'], $_POST['password']);
 if($adminAuthResult){
 loadTemplate("home");
 echo "Directed to Admin Home";
