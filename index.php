@@ -12,6 +12,9 @@ $userAuthResult = validateUser($email, $password);
 if( $userAuthResult){
     header("Location: home.php");
 }
+if($adminAuthResult){
+    header("Location: adminHome.php");
+}
 else{
     loadTemplate("head");
 ?>
@@ -51,4 +54,26 @@ else{
 </body>
 </html>
 <?php } ?>
-<?php } ?>
+<?php } 
+
+
+function validateUser($email, $password){
+
+    $conn = mysqli_connect("localhost","root","","glass");
+    if(!$conn){
+        die("Error while connecting to the database");
+    } 
+    mysqli_select_db($conn,'glass');
+    $query = "SELECT * FROM users  WHERE email = '$email' AND password = '$password'";
+    $result = mysqli_query($conn,$query);
+    $row = mysqli_fetch_array($result);
+    $count = mysqli_num_rows($result);
+    if($count ==1){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+?>
+

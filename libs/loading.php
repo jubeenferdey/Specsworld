@@ -12,12 +12,12 @@ function validateAdmin($email, $password){
     }
 }
 
-function validateUser($email, $password){
-    if($email == "user@gmail.com" && $password == "user"){
-        return true;
-    }else {
-        return false;
-    }
-}
+// function validateUser($email, $password){
+//     if($email == "user@gmail.com" && $password == "user"){
+//         return true;
+//     }else {
+//         return false;
+//     }
+// }
 
 ?>
