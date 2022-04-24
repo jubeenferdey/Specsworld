@@ -14,6 +14,6 @@
     <link rel="stylesheet" href="../css/style.css"  >
 
     <!-- custom js file link  -->
-    <!-- <script src="js/script.js" defer></script> -->
+    <script src="js/script.js" defer></script>
 
 </head>

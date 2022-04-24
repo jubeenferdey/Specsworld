@@ -1,6 +1,6 @@
 <header class="header">
 
-    <a href="home.html" class="logo"> SpecsWorld</a>
+    <a href="../Specsworld/home.php" class="logo"> SpecsWorld</a>
 
     <!-- Navbar relies here -->
     <nav class="navbar">
