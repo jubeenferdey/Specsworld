@@ -21,7 +21,7 @@ loadTemplate("adminHeader");
         <h3>Enter the Details</h3>
         <div class="inputBox">
             <span class="fas fa-user"></span>
-            <input type="text"  placeholder="Name" name="glassName">
+            <input type="text" value='rishab'  placeholder="Name" name="glassName">
 </div>
         <div class="inputBox">
             <span class="fas fa-user"></span>
@@ -40,7 +40,7 @@ loadTemplate("adminHeader");
             <input type="text"  placeholder="Shape" name="glassShape">
         </div>
 
-        <input type="file" value="Upload Image" class="btn">
+        <input type="file" value="Upload Image" name='uploadGlassesImg' class="btn">
         <input type="submit" class="btn" value="Submit" name="submit">
     </form>
     
