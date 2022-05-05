@@ -11,7 +11,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="<?php  $_SERVER['DOCUMENT_ROOT']."/Specsworld/"?> css/style.css"  >
-    <link rel="stylesheet" href="../css/style.css"  >
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- custom js file link  -->
     <script src="js/script.js" defer></script>

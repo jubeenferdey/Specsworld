@@ -1,5 +1,6 @@
 <?php
-
+include('../libs/loading.php');
+loadTemplate("head");
 $conn = mysqli_connect("localhost","root","","glass");
 if(!$conn){
     die("Error while connecting to the database");
@@ -7,31 +8,50 @@ if(!$conn){
     $query = "select * from glasses";
     $result = mysqli_query($conn, $query);
 }
+loadTemplate("adminHeader");
 ?>
-  <html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="app.css" type="text/css">
-    <title>All Products</title>
-  </head>
   <body>
-  <table class="table my-3 table-striped table-info table-hover">
-      <thead>
-      <tr class="table-danger">
-          <th scope="col">#ID</th>
-          <th scope="col">Image</th>
-          <th scope="col">Name</th>
-          <th scope="col">Power</th>
-          <th scope="col">Type</th>
-          <th scope="col">Actions</th>
-      </tr>
-      </thead>
-      <tbody>
+    <tr>
+    <div class="grid-container">
+    <div class="grid-item">
+        <div class="product-card">
+            <div class="product-tumb">
+            <img src="https://i.imgur.com/xdbHo4E.png" alt="">
+        </div>
+            <div class="product-details">
+                <span class="product-catagory">Women,bag</span>
+                <h4><a href="">Women leather bag</a></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                <div class="product-bottom-details">
+                    <div class="product-price"><small>$96.00</small>$230.99</div>
+                    <div class="product-links">
+                        <a href=""><i class="fa fa-heart"></i></a>
+                        <a href=""><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+</tr>
+<!-- Throw the below php code here -->
+      
+      
+      
+<!--       
+    </tbody>
+</table> -->
+
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+
 
 <?php
         foreach ($result as $key => ['id' => $id , 'Name' => $name,'Type'=>$type, 'Power'=>$power,'Image'=>$image ]){
@@ -57,19 +77,9 @@ if(!$conn){
           </form>
           
           </td>
-      </tr>");
+      </tr>
+      
+      
+      ");
       }
       ?>
-      
-      
-      
-      
-    </tbody>
-</table>
-
-
-</body>
-</html>
-
-</body>
-</html>
