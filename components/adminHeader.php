@@ -7,7 +7,7 @@
     <nav class="navbar">
         <ul>
             <li><a href="pages/addGlass.php">Add Glass</a></li>
-            <li><a href="viewProducts.php">View Products</a></li>
+            <li><a href="pages/viewProducts.php">View Products</a></li>
             <li><a href="products.html">View Users</a></li>
             <li><a href="products.html">View Orders</a></li>
             <li><a href="./index.php">Signout</a></li>
