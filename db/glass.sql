@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 09:39 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.14
+-- Generation Time: May 22, 2022 at 09:21 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ CREATE TABLE `glasses` (
 --
 
 INSERT INTO `glasses` (`ID`, `Name`, `Power`, `Type`, `Price`, `Shape`, `Image`) VALUES
-(1, 'Ray01', '0.5', 'Rayban', 1000, 'Rectangular', '');
+(1, 'Fastrack', '2.0', 'Reading', 4000, 'Round', '../uploads/Herz.jpg'),
+(2, 'Rayban', '3.0', 'Sunglass', 3500, 'Rectangle', '../uploads/nevada.jpg');
 
 -- --------------------------------------------------------
 
@@ -73,10 +74,26 @@ INSERT INTO `users` (`username`, `email`, `password`, `phone`, `address`) VALUES
 --
 
 --
+-- Indexes for table `glasses`
+--
+ALTER TABLE `glasses`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `glasses`
+--
+ALTER TABLE `glasses`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
